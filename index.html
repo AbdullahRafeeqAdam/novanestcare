@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Nest</title>
+    <link rel="icon" href="favrb.png" type="image/png">
+    <meta name="description" content="Your company description here. Provide high-quality medical braces and supplies.">
+
+    <!-- Simple, Original CSS -->
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0E2D52;
+            /* Primary blue */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1a4a7a;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #0E2D52;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        .main-header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: #0E2D52;
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            max-height: 75px;
+            width: auto;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .main-nav a:hover {
+            color: #0E2D52;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(226, 240, 255, 0.9), rgba(226, 240, 255, 0.9)), url('your-hero-background.jpg') center/cover no-repeat;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #0E2D52;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            background-color: #f8f9fa;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            color: #0E2D52;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Trust Section */
+        .trust-section {
+            background: linear-gradient(135deg, #0E2D52 0%, #00587f 100%);
+            color: white;
+        }
+
+        .trust-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .trust-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .trust-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .main-footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Container */
+        #whatsapp-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Callout (text + arrow) */
+        .whatsapp-callout {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            color: #25d366;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 30px;
+            padding: 6px 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            animation: bounce 2.5s infinite;
+            cursor: default;
+        }
+
+        /* Arrow shape */
+        .arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid #ffffff;
+            margin-left: 6px;
+            position: relative;
+        }
+
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            width: 55px;
+            height: 55px;
+            background: #25d366;
+            border-radius: 50%;
+            padding: 10px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            background: #1ebe57;
+        }
+
+        /* Simple bounce to attract attention */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            #whatsapp-container {
+                bottom: 15px;
+                right: 15px;
+                gap: 8px;
+            }
+
+            .whatsapp-icon {
+                width: 45px;
+                height: 45px;
+                padding: 8px;
+            }
+
+            .whatsapp-callout {
+                font-size: 13px;
+                padding: 5px 10px;
+            }
+
+            .arrow-right {
+                border-top-width: 5px;
+                border-bottom-width: 5px;
+                border-left-width: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating WhatsApp Icon with Arrow and Message -->
+    <div id="whatsapp-container">
+        <div class="whatsapp-callout">
+            <span class="whatsapp-text">Message us</span>
+            <div class="arrow-right"></div>
+        </div>
+
+        <a href="https://api.whatsapp.com/send/?phone=14435297329&text&type=phone_number&app_absent=0" target="_blank"
+            title="Chat with us on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                class="whatsapp-icon">
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container text-center">
+                <span style="font-weight: 500;">Need help? Call us: <a href="tel:+14435297329"
+                        style="color:white; text-decoration:none;">+1
+                        (443) 529-7329</a></span>
+            </div>
+        </div>
+        <div class="container header-content">
+            <a href="/">
+                <img src="final.png" alt="Your Company Logo" class="logo">
+            </a>
+            <button class="mobile-menu-btn" id="menuToggle">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="prescription.html">Prescription Upload</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero section">
+        <div class="container">
+            <h1>Shop Certified Medical Products With Confidence</h1>
+            <p>Trusted medical supplies delivered with care. Quality orthopedic braces and healthcare products for every need.</p>
+            <a href="products.html" class="btn">View Our Products</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Back & Knee Braces</h2>
+            <p class="section-subtitle text-center">We are a trusted supplier for back and knee braces,
+                accepting assignment to minimize your out-of-pocket costs.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="backrb.png" alt="Back Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Back Braces</h3>
+                        <p>Our durable back braces provide support and stability, helping you manage pain and improve
+                            mobility.</p>
+                        <a href="back-braces.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="kneerb.png" alt="Knee Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Knee Braces</h3>
+                        <p>Adjustable and comfortable knee braces designed for strength and support during recovery.</p>
+                        <a href="knee-braces.html" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Products -->
+    <section class="section product-showcase">
+        <div class="container">
+            <h2 class="section-title text-center">Extremity Braces & Support Products</h2>
+            <p class="section-subtitle text-center">A full range of quality medical devices for foot, ankle, shoulder,
+                elbow, and wrist support.</p>
+            <div class="product-grid">
+                <!-- Repeat this card for each product category -->
+                <div class="product-card">
+                    <img src="footrb.png" alt="Foot Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Foot Braces</h3>
+                        <a href="foot-products.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="anklerb.png" alt="Ankle Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Ankle Braces</h3>
+                        <a href="ankle-products.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="shoulderrb.png" alt="Shoulder Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Shoulder Products</h3>
+                        <a href="shoulder-products.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="elbowrb.png" alt="Elbow Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Elbow Products</h3>
+                        <a href="elbow-products.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="backrb.png" alt="Back Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Back Braces</h3>
+                        <a href="back-braces.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="wristrb.png" alt="Wrist Braces" class="product-img">
+                    <div class="product-info">
+                        <h3>Wrist Products</h3>
+                        <a href="wrist-products.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                <!-- Add more as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust / HIPAA Section -->
+    <!-- <section class="section trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <div class="trust-image">
+                    <img src="hipa.jpg" alt="HIPAA Compliant Security">
+                </div>
+                <div class="trust-text">
+                    <h2 class="section-title" style="color: white;">We Are HIPAA Compliant.</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Your privacy and security are our top priority.
+                        Our systems are fully HIPAA compliant, ensuring that all your personal health information is
+                        protected with the highest standards of confidentiality and care.</p>
+                    <p style="font-size: 1.1rem;">Trust us to handle your medical needs with the professionalism and
+                        security you deserve.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <p>Trusted provider of high-quality medical products. We offer a wide range of reliable supplies to
+                        support your health needs.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="prescription.html">Prescription Upload</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <p>
+                        849 Fairmount Ave, Suite 200<br>
+                        Towson, MD 21286<br> <br>
+                        Phone: <a href="tel:+14435297329">+1 (443) 529-7329</a><br> <br>
+                        Email: <a href="mailto:support@yourdomain.com">support@novanestcare.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 Nova Nest. All Rights Reserved. | <a href="privacy-policy.html"
+                        style="color:#bdc3c7;">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+
+        // Optional: Add fade-in animation for smooth appearance
+        window.addEventListener('load', () => {
+            const icon = document.getElementById('whatsapp-float');
+            icon.style.opacity = '1';
+        });
+    </script>
+</body>
+
+</html>

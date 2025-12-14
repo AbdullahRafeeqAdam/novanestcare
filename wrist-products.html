@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wrist Products | Nova Nest</title>
+    <link rel="icon" href="favrb.png" type="image/png">
+    <meta name="description"
+        content="Wrist Products & Braces">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0E2D52;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1A4A7A;
+            transform: translateY(-2px);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0E2D52;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Header */
+        .main-header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: #0E2D52;
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            max-height: 75px;
+            width: auto;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .main-nav a:hover {
+            color: #0E2D52;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ===== PAGE HERO SECTION ===== */
+        .page-hero {
+            background-color: #0E2D52;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .page-hero-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .page-hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* ===== PRODUCT FILTERS ===== */
+        .product-filters {
+            background-color: #f8fafc;
+            padding: 40px 0;
+        }
+
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filter-select {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            min-width: 220px;
+            background-color: white;
+            color: #333;
+        }
+
+        .search-input {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            min-width: 300px;
+            background-color: white;
+        }
+
+        /* ===== PRODUCTS GRID ===== */
+        .products-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .products-sidebar {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+        }
+
+        .products-main {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .category-sidebar {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            color: #0E2D52;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .category-list {
+            margin-bottom: 25px;
+        }
+
+        .category-item {
+            margin-bottom: 12px;
+        }
+
+        .category-link {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .category-link:hover {
+            background-color: #f0f4f8;
+            color: #0E2D52;
+            padding-left: 20px;
+        }
+
+        .category-link.active {
+            background-color: #0E2D52;
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 250px;
+            background-color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .product-image img {
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-name {
+            color: #0E2D52;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .product-type {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: #f0f4f8;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .product-btn {
+            display: inline-block;
+            background-color: #0E2D52;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .product-btn:hover {
+            background-color: #1A4A7A;
+        }
+
+        /* ===== CONTENT SECTIONS ===== */
+        .content-section {
+            background-color: #f8fafc;
+        }
+
+        .content-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .content-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .content-image {
+            flex: 1;
+        }
+
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-title {
+            font-size: 2rem;
+            color: #0E2D52;
+            margin-bottom: 20px;
+        }
+
+        .content-paragraph {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 35px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+            border-top: 4px solid #0E2D52;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: #0E2D52;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 28px;
+        }
+
+        .feature-title {
+            color: #0E2D52;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .feature-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .feature-link {
+            color: #0E2D52;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-link:hover {
+            gap: 12px;
+        }
+
+        /* ===== WHATSAPP FLOATING BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .whatsapp-message {
+            background: white;
+            color: #25D366;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-message::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 10px solid white;
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            background: #1ebe57;
+        }
+
+        .whatsapp-icon i {
+            color: white;
+            font-size: 32px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FOOTER STYLES (Consistent with Index) ===== */
+        .site-footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 12px;
+            color: #bdc3c7;
+        }
+
+        .footer-contact a {
+            color: #bdc3c7;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .page-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .content-row {
+                flex-direction: column;
+            }
+
+            .products-container {
+                flex-direction: column;
+            }
+
+            .products-sidebar {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .main-navigation {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 30px 30px;
+                transition: right 0.3s;
+                z-index: 999;
+            }
+
+            .main-navigation.active {
+                right: 0;
+            }
+
+            .main-navigation ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-link {
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+                display: block;
+            }
+
+            .page-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .filter-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-select,
+            .search-input {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-message {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-icon i {
+                font-size: 28px;
+            }
+
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero-title {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .whatsapp-message {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-message">
+            <span>Chat with us</span>
+        </div>
+        <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-icon" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container text-center">
+                <span style="font-weight: 500;">Need help? Call us: <a href="tel:+14435297329"
+                        style="color:white; text-decoration:none;">+1
+                        (443) 529-7329</a></span>
+            </div>
+        </div>
+        <div class="container header-content">
+            <a href="/">
+                <img src="final.png" alt="Your Company Logo" class="logo">
+            </a>
+            <button class="mobile-menu-btn" id="menuToggle">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="prescription.html">Prescription Upload</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero section-padding">
+        <div class="container">
+            <h1 class="page-hero-title text-center">Wrist Braces & Support</h1>
+            <p class="page-hero-subtitle text-center">
+                Wrist pain can make even small motions frustrating. Our range of wrist support products provides
+                targeted compression and stabilization, helping ease discomfort, reduce strain, and support steady,
+                controlled movement.
+
+
+            </p>
+        </div>
+    </section>
+
+    <!-- Product Filters -->
+    <!-- <section class="product-filters">
+        <div class="container">
+            <div class="filter-container">
+                <select class="filter-select" id="manufacturerFilter">
+                    <option value="">Select Manufacturer</option>
+                    <option value="all">All Manufacturers</option>
+                    <option value="spinecare">SpineCare</option>
+                    <option value="supportplus">SupportPlus</option>
+                    <option value="medbrace">MedBrace</option>
+                    <option value="orthotech">OrthoTech</option>
+                </select>
+
+                <select class="filter-select" id="typeFilter">
+                    <option value="">Select Brace Type</option>
+                    <option value="all">All Types</option>
+                    <option value="lso">LSO Braces</option>
+                    <option value="tlso">TLSO Braces</option>
+                    <option value="decompression">Decompression</option>
+                    <option value="si-support">SI Support</option>
+                    <option value="post-op">Post-Operative</option>
+                </select>
+
+                <input type="text" class="search-input" id="productSearch" placeholder="Search back braces...">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Products Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="products-container">
+                <!-- Sidebar -->
+                <aside class="products-sidebar">
+                    <div class="category-sidebar">
+                        <h3 class="category-title">Product Categories</h3>
+                        <div class="category-list">
+                            <div class="category-item">
+                                <a href="back-braces.html" class="category-link active">Back Braces</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="knee-braces.html" class="category-link">Knee Braces</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="cervical-traction.html" class="category-link">Cervical Traction</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="ankle-products.html" class="category-link">Ankle Braces</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="shoulder-products.html" class="category-link">Shoulder Products</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="elbow-products.html" class="category-link">Elbow Products</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="hip-products.html" class="category-link">Hip Products</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="wrist-products.html" class="category-link">Wrist Products</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="foot-products.html" class="category-link">Foot Products</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="dvt.html" class="category-link">DVT</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="ma.html" class="category-link">Mobility Aids</a>
+                            </div>
+                        </div>
+
+                        <!-- <h3 class="category-title">Back Brace Types</h3>
+                        <div class="category-list">
+                            <div class="category-item">
+                                <a href="#" class="category-link">LSO (Lumbar Sacral Orthosis)</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" class="category-link">TLSO (Thoraco-Lumbo-Sacral Orthosis)</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" class="category-link">Decompression Braces</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" class="category-link">SI (Sacroiliac) Belts</a>
+                            </div>
+                            <div class="category-item">
+                                <a href="#" class="category-link">Post-Operative Braces</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </aside>
+
+                <!-- Main Products -->
+                <main class="products-main">
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Product cards will be populated by JavaScript -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section 1 -->
+    <!-- <section class="section-padding content-section">
+        <div class="container">
+            <div class="content-row">
+                <div class="content-image">
+                    <img src="backp.png" alt="Back brace support demonstration">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Finding the Right Back Support</h2>
+                    <p class="content-paragraph">
+                        Choosing the appropriate back brace is essential for effective recovery and pain management.
+                        Our braces are designed to provide specific support based on your individual needs, whether for
+                        post-operative recovery, chronic conditions, or injury prevention.
+                    </p>
+                    <p class="content-paragraph">
+                        Lower back pain affects millions and can stem from various causes including muscle strain,
+                        age-related changes, or specific medical conditions. The right support can make a significant
+                        difference in your comfort and mobility.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-row reverse">
+                <div class="content-image">
+                    <img src="backlong.png" alt="Comfortable back brace design">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">Comfort Meets Support</h2>
+                    <p class="content-paragraph">
+                        Our back braces are crafted from breathable, high-quality materials that provide optimal support
+                        without compromising comfort. They're designed to be worn throughout the day, fitting discreetly
+                        under clothing while delivering the support you need.
+                    </p>
+                    <p class="content-paragraph">
+                        While exercise and physical therapy are important for long-term back health, a supportive brace
+                        can provide immediate relief and protection during recovery or while managing chronic
+                        conditions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Features Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">How We Can Help</h2>
+            <p class="section-subtitle text-center">
+                We make it easy to get the support you need with our comprehensive services and expertise.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Insurance Coverage</h3>
+                    <p class="feature-description">
+                        Many of our wrist products may be covered by Medicare and private insurance plans.
+                        Contact us to verify your coverage options and minimize out-of-pocket expenses.
+                    </p>
+                    <a href="contact.html" class="feature-link">
+                        Check Coverage <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="feature-title">Expert Guidance</h3>
+                    <p class="feature-description">
+                        Our team includes specialists who can help you select the right brace for your specific
+                        condition and needs, ensuring optimal support and comfort.
+                    </p>
+                    <a href="contact.html" class="feature-link">
+                        Get Advice <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p class="feature-description">
+                        Receive your medical supplies promptly with our efficient shipping and delivery
+                        options across the country, so you can start feeling better sooner.
+                    </p>
+                    <a href="contact.html" class="feature-link">
+                        Order Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <p style="color: #bdc3c7; line-height: 1.7;">
+                        Trusted provider of high-quality medical products. We offer a wide range of reliable supplies to
+                        support your health needs.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="prescription.html">Prescription Upload</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <div class="footer-contact">
+                        <p>
+                            849 Fairmount Ave, Suite 200 <br>
+                            Towson, MD 21286
+                        </p>
+                        <p>
+                            <strong>Phone:</strong>
+                            <a href="tel:+1(443)5297329">+1 (443) 529-7329</a>
+                        </p>
+                        <p>
+                            <strong>Email:</strong>
+                            <a href="mailto:support@novanestcare.com">support@novanestcare.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> 2025-2026 Nova Nest. All Rights Reserved. |
+                    <a href="privacy-policy.html" style="color:#95a5a6;">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sample product data for back braces
+        const backBracesProducts = [
+            {
+                id: 1,
+                name: "Standard Wrist Brace",
+                manufacturer: "spinecare",
+                type: "lso",
+                image: "wp1.png",
+                description: "Provides lumbar support with adjustable compression"
+            },
+            {
+                id: 2,
+                name: "Hinged Wrist Brace",
+                manufacturer: "supportplus",
+                type: "tlso",
+                image: "wp2.png",
+                description: "Thoracic-lumbar-sacral orthosis for full spinal support"
+            },
+        ];
+
+        // Initialize the product grid
+        function initializeProducts() {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            backBracesProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.dataset.manufacturer = product.manufacturer;
+                productCard.dataset.type = product.type;
+                productCard.dataset.name = product.name.toLowerCase();
+
+                // Type display text
+                let typeText = '';
+                switch (product.type) {
+                    case 'lso': typeText = 'LSO Brace'; break;
+                    case 'tlso': typeText = 'TLSO Brace'; break;
+                    case 'decompression': typeText = 'Decompression'; break;
+                    case 'si-support': typeText = 'SI Support'; break;
+                    case 'post-op': typeText = 'Post-Operative'; break;
+                    default: typeText = 'Back Brace';
+                }
+
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+<a href="contact.html" class="product-btn">Learn More</a>
+                    </div>
+                `;
+
+                grid.appendChild(productCard);
+            });
+
+            // Initialize filtering
+            setupFilters();
+        }
+
+        // Setup filter functionality
+        function setupFilters() {
+            const manufacturerFilter = document.getElementById('manufacturerFilter');
+            const typeFilter = document.getElementById('typeFilter');
+            const searchBox = document.getElementById('productSearch');
+            const productCards = document.querySelectorAll('.product-card');
+
+            function filterProducts() {
+                const manufacturerValue = manufacturerFilter.value;
+                const typeValue = typeFilter.value;
+                const searchValue = searchBox.value.toLowerCase();
+
+                productCards.forEach(card => {
+                    const matchesManufacturer = manufacturerValue === '' ||
+                        manufacturerValue === 'all' ||
+                        card.dataset.manufacturer === manufacturerValue;
+
+                    const matchesType = typeValue === '' ||
+                        typeValue === 'all' ||
+                        card.dataset.type === typeValue;
+
+                    const matchesSearch = searchValue === '' ||
+                        card.dataset.name.includes(searchValue);
+
+                    if (matchesManufacturer && matchesType && matchesSearch) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            manufacturerFilter.addEventListener('change', filterProducts);
+            typeFilter.addEventListener('change', filterProducts);
+            searchBox.addEventListener('input', filterProducts);
+        }
+
+        // Mobile Menu Toggle (Consistent with Index)
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            document.getElementById('mainNav').classList.toggle('active');
+            this.innerHTML = this.innerHTML.includes('bars') ?
+                '<i class="fas fa-times"></i>' :
+                '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.getElementById('menuToggle');
+
+            if (!nav.contains(event.target) && !toggle.contains(event.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                toggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Update current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeProducts();
+
+            // Add loading animation to product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+
+</html>

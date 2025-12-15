@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Nova Nest</title>
+    <link rel="icon" href="favrb.png" type="image/png">
+    <meta name="description"
+        content="Read the Nova Nest Care terms of Use and legal policies for our website and services.">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0E2D52;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1A4A7A;
+            transform: translateY(-2px);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0E2D52;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Header */
+        .main-header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: #0E2D52;
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            max-height: 75px;
+            width: auto;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .main-nav a:hover {
+            color: #0E2D52;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ===== PAGE HERO SECTION ===== */
+        .page-hero {
+            background: linear-gradient(rgba(14, 45, 82, 0.9), rgba(14, 45, 82, 0.95));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        /* ===== CONTENT SECTION STYLES ===== */
+        .legal-content {
+            background-color: #f8fafc;
+            padding: 60px 0;
+        }
+
+        .legal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+        }
+
+        .legal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal-section h2 {
+            color: #0E2D52;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .legal-section h3 {
+            color: #0E2D52;
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        .legal-section p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .legal-section ul {
+            margin: 15px 0 20px 30px;
+        }
+
+        .legal-section li {
+            margin-bottom: 10px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .legal-section strong {
+            color: #333;
+        }
+
+        .disclaimer-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #0E2D52;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 998;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background-color: #1A4A7A;
+        }
+
+        /* ===== WHATSAPP FLOATING BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .whatsapp-message {
+            background: white;
+            color: #25D366;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-message::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 10px solid white;
+        }
+
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            background: #1ebe57;
+        }
+
+        .whatsapp-icon i {
+            color: white;
+            font-size: 32px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        .site-footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 12px;
+            color: #bdc3c7;
+        }
+
+        .footer-contact a {
+            color: #bdc3c7;
+            transition: color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .page-hero-title {
+                font-size: 2.2rem;
+            }
+
+            .legal-container {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .main-navigation {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: white;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 80px 30px 30px;
+                transition: right 0.3s;
+                z-index: 999;
+            }
+
+            .main-navigation.active {
+                right: 0;
+            }
+
+            .main-navigation ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-link {
+                padding: 15px 0;
+                border-bottom: 1px solid #eee;
+                display: block;
+            }
+
+            .page-hero-title {
+                font-size: 1.8rem;
+            }
+
+            .legal-container {
+                padding: 30px 20px;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-message {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .whatsapp-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-icon i {
+                font-size: 28px;
+            }
+
+            .header-top-content {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .back-to-top {
+                left: 20px;
+                bottom: 80px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero-title {
+                font-size: 1.5rem;
+            }
+
+            .legal-container {
+                padding: 20px 15px;
+            }
+
+            .legal-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .whatsapp-message {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <div class="whatsapp-message">
+            <span>Chat with us</span>
+        </div>
+        <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-icon" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="container text-center">
+                <span style="font-weight: 500;">Need help? Call us: <a href="tel:+14435297329"
+                        style="color:white; text-decoration:none;">+1
+                        (443) 529-7329</a></span>
+            </div>
+        </div>
+        <div class="container header-content">
+            <a href="/">
+                <img src="final.png" alt="Your Company Logo" class="logo">
+            </a>
+            <button class="mobile-menu-btn" id="menuToggle">☰</button>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="prescription.html">Prescription Upload</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero section-padding">
+        <div class="container">
+            <h1 class="page-hero-title text-center">Terms of Use & Legal Policies</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">
+                Last Updated: December 15, 2025
+            </p>
+        </div>
+    </section>
+
+    <!-- Legal Content -->
+    <section class="legal-content section-padding">
+        <div class="container legal-container">
+            <div class="legal-section">
+                <div class="warning-box">
+                    <p><strong>IMPORTANT NOTICE:</strong> PLEASE READ THESE TERMS CAREFULLY BEFORE USING THIS WEBSITE
+                        ("SITE").
+                        These Terms of Use were last updated on December 15, 2025. We may change these Terms of Use at
+                        any time.
+                        Please review the Terms of Use each time you visit the Site. By using this Site, you accept the
+                        most
+                        recent version of these Terms of Use.</p>
+                </div>
+
+                <div class="disclaimer-box">
+                    <p><strong>MEDICAL DISCLAIMER:</strong> THIS SITE DOES NOT PROVIDE MEDICAL ADVICE. The content on
+                        this
+                        site is for informational purposes only and is not a substitute for professional medical advice,
+                        diagnosis, or treatment. Always seek the advice of your physician or other qualified health
+                        provider
+                        with any questions you may have regarding a medical condition.</p>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using the Nova Nest Care website, you accept and agree to be bound by these
+                    Terms of Use. If you do not agree to these terms, please do not use our Site. These Terms of Use
+                    apply
+                    exclusively to your access to and use of this Site and do not alter the terms or conditions of any
+                    other agreement you may have with Nova Nest Care regarding other matters.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>2. About Our Site</h2>
+                <p>This Site is owned and operated by Nova Nest Care ("we," "us," or "our"). Nova Nest Care
+                    refers to our entire business, including any subsidiaries and affiliates. The Site provides
+                    information
+                    about braces, medical equipment, and related services we offer.</p>
+
+                <p>The materials on this Site are for general educational information only. Information you read on this
+                    Site cannot replace the relationship that you have with your healthcare professional. This Site
+                    contains
+                    information about medical products we sell.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>3. Intellectual Property Rights</h2>
+                <p>All original content on this Site, including text, graphics, logos, images, and software, is the
+                    property of
+                    Nova Nest Care or its licensors and is protected by United States and international copyright,
+                    trademark, and other intellectual property laws. The Nova Nest Care name and logos are registered
+                    trademarks of Nova Nest Care. All third-party product names, logos, brands, and trademarks are the
+                    property of their respective owners and are used for identification purposes only.</p>
+
+                <p><strong>Notice Regarding Third-Party Materials:</strong> Some product images and visual content on
+                    this Site
+                    may be sourced from third-party providers under appropriate licenses or constitute fair use for
+                    educational
+                    and informational purposes. All such materials are used with permission or in accordance with
+                    applicable
+                    law. If you believe any content infringes your intellectual property rights, please contact us
+                    immediately
+                    at <a href="mailto:supprt@novanestcare.com">support@novanestcare.com</a>.</p>
+
+                <p>We grant you a limited, non-exclusive, non-transferable, revocable license to view, download, and
+                    print
+                    materials from this Site for your personal, non-commercial use only, provided you retain all
+                    copyright and
+                    other proprietary notices contained in the original materials.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>4. Original Design Statement</h2>
+                <div class="info-box">
+                    <p><strong>Design Originality:</strong> The design, layout, user interface, and overall visual
+                        presentation
+                        of this website are original creations specifically developed for Nova Nest Care. Any similarity
+                        to
+                        other websites is coincidental and unintentional. We affirm that our website design has been
+                        developed
+                        independently without copying or substantially reproducing the protected elements of any
+                        third-party
+                        website.</p>
+                </div>
+                <p>We respect the intellectual property rights of others and require that our users do the same. If you
+                    believe
+                    our website infringes your intellectual property rights, please contact us with specific details for
+                    immediate investigation.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>5. User Responsibilities</h2>
+                <p>When using our Site, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information when requested</li>
+                    <li>Maintain the confidentiality of your account credentials</li>
+                    <li>Use the Site only for lawful purposes</li>
+                    <li>Not attempt to gain unauthorized access to any part of the Site</li>
+                    <li>Not interfere with the proper working of the Site</li>
+                    <li>Not use the Site to transmit any harmful or malicious code</li>
+                    <li>Not copy, reproduce, distribute, or create derivative works from any content without
+                        authorization</li>
+                    <li>Not use any data mining, robots, or similar data gathering/extraction methods</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>6. Medical Information & HIPAA Compliance</h2>
+                <div class="info-box">
+                    <p><strong>HIPAA Compliance:</strong> We are committed to protecting your health information in
+                        accordance
+                        with the Health Insurance Portability and Accountability Act (HIPAA) and other applicable
+                        privacy laws.
+                        All patient data is handled and stored according to HIPAA regulations and CMS guidelines.</p>
+                </div>
+
+                <p>While we implement appropriate security measures to protect your information, you acknowledge that:
+                </p>
+                <ul>
+                    <li>No system can guarantee absolute security</li>
+                    <li>You should not share sensitive health information through unsecured channels</li>
+                    <li>You are responsible for maintaining the security of your own devices and internet connection
+                    </li>
+                    <li>We comply with all applicable federal and state privacy regulations</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>7. Product Information & Image Usage</h2>
+                <div class="warning-box">
+                    <p><strong>Product Image Disclaimer:</strong> Product images on this website are for illustrative
+                        purposes
+                        only. Some images may be representative images licensed from third-party providers or used under
+                        fair
+                        use principles for educational purposes. Actual products may vary in appearance, color, or
+                        specific
+                        design. All product specifications and features should be verified with our representatives
+                        before
+                        purchase.</p>
+                </div>
+
+                <p>References to our products or services on this Site do not imply that such products or services are
+                    available in all locations or are appropriate for all individuals. Product availability may vary by
+                    location
+                    and is subject to applicable regulations and conditions of use.</p>
+
+                <p>While we strive to provide accurate product information, we do not warrant that product descriptions,
+                    pricing, or other content on this Site is accurate, complete, reliable, current, or error-free.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>8. Third-Party Content & Fair Use</h2>
+                <p>This Site may contain or reference content, images, or materials owned by third parties. Such content
+                    is used:</p>
+                <ul>
+                    <li>Under appropriate licenses or permissions</li>
+                    <li>In accordance with fair use principles for commentary, criticism, news reporting, teaching,
+                        scholarship, or research</li>
+                    <li>With proper attribution where required</li>
+                    <li>For educational and informational purposes only</li>
+                </ul>
+                <p>If you are a copyright owner and believe your work has been used in a way that constitutes copyright
+                    infringement, please contact our designated agent under the Digital Millennium Copyright Act (DMCA).
+                </p>
+            </div>
+
+            <div class="legal-section">
+                <h2>9. Limitations of Liability</h2>
+                <div class="warning-box">
+                    <p><strong>TO THE FULLEST EXTENT PERMITTED BY LAW, Nova Nest Care SHALL NOT BE LIABLE FOR ANY
+                            DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING BUT
+                            NOT LIMITED
+                            TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES RESULTING
+                            FROM:</strong></p>
+                    <ul>
+                        <li>Your use or inability to use the Site</li>
+                        <li>Unauthorized access to or alteration of your transmissions or data</li>
+                        <li>Statements or conduct of any third party on the Site</li>
+                        <li>Any reliance on product images, descriptions, or specifications</li>
+                        <li>Any claim of design or content similarity to third-party websites</li>
+                        <li>Any other matter relating to the Site</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2>10. Disclaimer of Warranties</h2>
+                <p>THE SITE AND ALL INFORMATION, CONTENT, MATERIALS, AND SERVICES INCLUDED ON OR OTHERWISE MADE
+                    AVAILABLE
+                    TO YOU THROUGH THE SITE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, UNLESS OTHERWISE
+                    SPECIFIED
+                    IN WRITING.</p>
+
+                <p>Nova Nest Care MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, AS TO THE
+                    OPERATION OF THE SITE OR THE INFORMATION, CONTENT, MATERIALS, OR SERVICES INCLUDED ON OR OTHERWISE
+                    MADE
+                    AVAILABLE TO YOU THROUGH THE SITE, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+                    FITNESS FOR
+                    A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR ACCURACY OF CONTENT.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>11. Third-Party Links</h2>
+                <p>Our Site may contain links to third-party websites. These links are provided for your convenience
+                    only.
+                    We do not control, endorse, or make any representations about these third-party sites. If you decide
+                    to
+                    access any third-party sites linked from our Site, you do so entirely at your own risk.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>12. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless Nova Nest Care, its officers, directors,
+                    employees, agents, and affiliates from and against any and all claims, damages, obligations, losses,
+                    liabilities, costs, or debt, and expenses (including but not limited to reasonable attorney's fees)
+                    arising
+                    from:</p>
+                <ul>
+                    <li>Your use of and access to the Site</li>
+                    <li>Your violation of any term of these Terms of Use</li>
+                    <li>Your violation of any third-party right, including any copyright, trademark, patent, trade
+                        secret, or privacy right</li>
+                    <li>Any claim that your content caused damage to a third party</li>
+                    <li>Your unauthorized use of any content from this Site</li>
+                </ul>
+            </div>
+
+            <div class="legal-section">
+                <h2>13. Copyright Infringement Claims (DMCA)</h2>
+                <p>Nova Nest Care respects the intellectual property rights of others and expects users to do the same.
+                    If you believe that your copyrighted work has been copied in a way that constitutes copyright
+                    infringement,
+                    please provide our designated copyright agent with the following information:</p>
+                <ul>
+                    <li>A physical or electronic signature of the copyright owner or authorized person</li>
+                    <li>Identification of the copyrighted work claimed to have been infringed</li>
+                    <li>Identification of the material that is claimed to be infringing</li>
+                    <li>Your contact information</li>
+                    <li>A statement that you have a good faith belief that the use is not authorized</li>
+                    <li>A statement that the information in your notice is accurate</li>
+                </ul>
+                <p>Send DMCA notices to: <a href="mailto:dmca@novanestcare.com">dmca@novanestcare.com</a></p>
+            </div>
+
+            <div class="legal-section">
+                <h2>14. Modifications to Terms</h2>
+                <p>We reserve the right to modify these Terms of Use at any time. We will post the most current version
+                    on our Site with the updated effective date. Your continued use of the Site after any changes
+                    constitutes
+                    your acceptance of the new Terms of Use.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>15. Governing Law & Dispute Resolution</h2>
+                <p>These Terms of Use shall be governed by and construed in accordance with the laws of the State of
+                    Maryland, without regard to its conflict of law provisions. Any legal action or proceeding arising
+                    under
+                    these Terms of Use will be brought exclusively in the federal or state courts located in Baltimore
+                    County,
+                    Maryland, and you hereby consent to personal jurisdiction and venue in such courts.</p>
+                <p>Before filing any legal action, you agree to attempt to resolve the dispute informally by contacting
+                    us
+                    first at <a href="mailto:legal@novanestcare.com">legal@novanestcare.com</a>.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>16. Contact Information</h2>
+                <p>If you have any questions about these Terms of Use, please contact us:</p>
+                <div class="info-box">
+                    <p><strong>Nova Nest Care</strong><br>
+                        849 Fairmount Ave, Suite 200 <br>
+                        Towson, MD 21286. <br>
+                        Phone: +1 (555) 123-4567<br>
+                        Email: <a href="mailto:support@novanestcare.com">support@novanestcare.com</a><br>
+                </div>
+            </div>
+
+            <div class="legal-section">
+                <h2>17. Severability</h2>
+                <p>If any provision of these Terms of Use is found to be unlawful, void, or unenforceable, that
+                    provision
+                    shall be deemed severable from these Terms and shall not affect the validity and enforceability of
+                    any
+                    remaining provisions.</p>
+            </div>
+
+            <div class="legal-section">
+                <h2>18. Entire Agreement</h2>
+                <p>These Terms of Use, together with our Privacy Policy, Cookie Policy, and any other legal notices
+                    published by
+                    Nova Nest Care on the Site, constitute the entire agreement between you and Nova Nest Care
+                    concerning your use of the Site and supersede all prior agreements and understandings, whether
+                    written or
+                    oral.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <p style="color: #bdc3c7; line-height: 1.7;">
+                        Trusted provider of high-quality medical products. We offer a wide range of reliable supplies to
+                        support your health needs.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="prescription.html">Prescription Upload</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Information</h4>
+                    <div class="footer-contact">
+                        <p>
+                            849 Fairmount Ave, Suite 200 <br>
+                            Towson, MD 21286
+                        </p>
+                        <p>
+                            <strong>Phone:</strong>
+                            <a href="tel:+1 (443) 529-7329">+1 (443) 529-7329</a>
+                        </p>
+                        <p>
+                            <strong>Email:</strong>
+                            <a href="mailto:support@novanestcare.com">support@novanestcare.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Nova Nest Care. All Rights Reserved. |
+                    <a href="privacy-policy.html" style="color:#95a5a6;">Privacy Policy</a> |
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            document.getElementById('mainNav').classList.toggle('active');
+            this.innerHTML = this.innerHTML.includes('bars') ?
+                '<i class="fas fa-times"></i>' :
+                '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.getElementById('menuToggle');
+
+            if (!nav.contains(event.target) && !toggle.contains(event.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                toggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Update current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links within the page
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add smooth fade-in animation to content
+            const contentElements = document.querySelectorAll('.legal-section');
+            contentElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+
+                setTimeout(() => {
+                    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+
+            // Highlight current section in navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === 'terms-of-use.html') {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

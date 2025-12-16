@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Nova Nest</title>
+    <link rel="shortcut icon" href="favrb.png" type="image/png">
+    <meta name="description"
+        content="Browse Nova Nest's range of high-quality medical braces and supplies. back braces, knee braces, and extremity supports.">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Container */
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .site-header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: #0E2D52;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .header-top a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .site-logo {
+            height: 75px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #0E2D52;
+        }
+
+        /* Hero Section */
+        .products-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('ppp.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Main Content */
+        .products-intro {
+            text-align: center;
+            padding: 40px 0;
+            max-width: 900px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title {
+            color: #0E2D52;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            margin: 60px 0;
+        }
+
+        .featured-title {
+            text-align: center;
+            color: #0E2D52;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 250px;
+            object-fit: scale-down;
+        }
+
+        .featured-content {
+            padding: 25px;
+        }
+
+        .featured-name {
+            color: #0E2D52;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .featured-text {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #0E2D52;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #1a4a7a;
+        }
+
+        /* Product Categories Grid */
+        .categories-section {
+            background: #f0f7ff;
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+
+        .categories-title {
+            text-align: center;
+            color: #0E2D52;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .category-name {
+            color: #0E2D52;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .category-link {
+            display: inline-block;
+            color: #0E2D52;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .category-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Detailed Product Sections */
+        .product-detail {
+            margin: 80px 0;
+        }
+
+        .detail-title {
+            color: #0E2D52;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .detail-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-text h3 {
+            color: #0E2D52;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .detail-text ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 20px 0;
+        }
+
+        .detail-text li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .detail-text li:before {
+            content: "✓";
+            color: #0E2D52;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: #2c3e50;
+            color: white;
+            padding: 80px 0;
+            margin: 80px 0;
+        }
+
+        .testimonials-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: #f0f7ff;
+            margin: 80px 0;
+        }
+
+        .cta-title {
+            color: #0E2D52;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #1ebe57;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-title {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        #whatsapp-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .whatsapp-callout {
+            display: flex;
+            align-items: center;
+            background: white;
+            color: #25d366;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 30px;
+            padding: 6px 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            animation: bounce 2.5s infinite;
+        }
+
+        .arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 10px solid white;
+            margin-left: 6px;
+        }
+
+        .whatsapp-icon {
+            width: 55px;
+            height: 55px;
+            background: #25d366;
+            border-radius: 50%;
+            padding: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header-main {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                padding: 0 15px;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .whatsapp-callout {
+                font-size: 13px;
+                padding: 5px 10px;
+            }
+
+            .whatsapp-icon {
+                width: 45px;
+                height: 45px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WhatsApp Float -->
+    <div id="whatsapp-container">
+        <div class="whatsapp-callout">
+            <span class="whatsapp-text">Message us</span>
+            <div class="arrow-right"></div>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=14435297329&text&type=phone_number&app_absent=0" target="_blank"
+            title="Chat with Nova Nest on WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                class="whatsapp-icon">
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="page-container" style="font-weight: 500;">
+                Need help? Call us: <a href="tel:+14435297329" style="text-decoration: none;">+1 (443) 529-7329</a>
+            </div>
+        </div>
+        <div class="page-container header-main">
+            <a href="index.html">
+                <img src="final.png" alt="Nova Nest Logo" class="site-logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" style="color: #0E2D52;">Products</a></li>
+                    <li><a href="prescription.html">Prescription Upload</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="page-container">
+            <h1 class="hero-title">Medical Braces & Products</h1>
+            <p class="hero-subtitle">
+                Nova Nest provides high-quality, back braces, knee braces, and extremity supports.
+                We help patients receive quality medical equipment at reasonable cost.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-container">
+        <!-- Introduction -->
+        <section class="products-intro">
+            <h2 class="section-title">Our Medical Products</h2>
+            <p class="section-description">
+                Nova Nest offers a comprehensive range of orthopedic braces
+                and medical supplies. From treating chronic conditions to acute injuries, we provide the right support
+                to guide your treatment and recovery journey.
+            </p>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2 class="featured-title">Back & Knee Braces</h2>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <img src="backrb.png" alt="Back Braces" class="featured-image">
+                    <div class="featured-content">
+                        <h3 class="featured-name">Back Braces</h3>
+                        <p class="featured-text">
+                            Our durable back braces provide support and stability for various spinal conditions.
+                        </p>
+                        <a href="back-braces.html" class="btn-primary">Browse Back Braces</a>
+                    </div>
+                </article>
+
+                <article class="featured-card">
+                    <img src="kneerb.png" alt="Knee Braces" class="featured-image">
+                    <div class="featured-content">
+                        <h3 class="featured-name">Knee Braces</h3>
+                        <p class="featured-text">
+                            Our knee braces support and protect your knees with our range of knee braces.
+                        </p>
+                        <a href="knee-braces.html" class="btn-primary">Browse Knee Braces</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="categories-section">
+            <div class="page-container">
+                <h2 class="categories-title">Extremity Braces & Medical Products</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon">🦶</div>
+                        <h3 class="category-name">Foot Products</h3>
+                        <p>Supports and braces for foot conditions and injuries.</p>
+                        <a href="foot-products.html" class="category-link">Learn More →</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🦵</div>
+                        <h3 class="category-name">Ankle Products</h3>
+                        <p>Stabilization and support for ankle injuries and recovery.</p>
+                        <a href="ankle-products.html" class="category-link">Learn More →</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">💪</div>
+                        <h3 class="category-name">Shoulder Products</h3>
+                        <p>Immobilizers and supports for shoulder injuries.</p>
+                        <a href="shoulder-products.html" class="category-link">Learn More →</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🤲</div>
+                        <h3 class="category-name">Elbow Products</h3>
+                        <p>Braces for elbow conditions and post-operative support.</p>
+                        <a href="elbow-products.html" class="category-link">Learn More →</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">✋</div>
+                        <h3 class="category-name">Wrist Products</h3>
+                        <p>Supports for wrist injuries, carpal tunnel, and strains.</p>
+                        <a href="wrist-products.html" class="category-link">Learn More →</a>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">🩺</div>
+                        <h3 class="category-name">Mobility Aids</h3>
+                        <p>Canes, safety aids and exercise equipment.</p>
+                        <a href="ma.html" class="category-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back Braces Detail -->
+        <section class="product-detail">
+            <h2 class="detail-title">Back Braces for Various Conditions</h2>
+            <div class="detail-content">
+                <div>
+                    <img src="48b4ddbe26b01bda2dd9ee02fd14c78d.jpg_720x720q80.jpg" alt="Back Brace Details"
+                        class="detail-image">
+                </div>
+                <div class="detail-text">
+                    <h3>Comprehensive Back Support</h3>
+                    <p>Our back braces address a wide range of spinal conditions with proper medical necessity and
+                        prescription alignment.</p>
+                    <ul>
+                        <li>Chronic Back Pain</li>
+                        <li>Degenerative, Herniated or Bulging Discs</li>
+                        <li>Spinal Stenosis</li>
+                        <li>Spondylolysis & Spondylolisthesis</li>
+                        <li>Post-Laminectomy Syndrome</li>
+                        <li>SI Dysfunction</li>
+                        <li>Pre or Post-Op Spinal Stabilization</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary">Contact Us for Back Braces</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knee Braces Detail -->
+        <section class="product-detail">
+            <h2 class="detail-title">Knee Braces for Injury & Recovery</h2>
+            <div class="detail-content">
+                <div class="detail-text">
+                    <h3>Specialized Knee Support</h3>
+                    <p>Our knee braces provide targeted support for various injuries and post-operative recovery needs.
+                    </p>
+                    <ul>
+                        <li>ACL (Anterior Cruciate Ligament) Injuries</li>
+                        <li>PCL (Posterior Cruciate Ligament) Repairs</li>
+                        <li>MCL & LCL (Collateral Ligament) Injuries</li>
+                        <li>Meniscal Repairs</li>
+                        <li>Tibial Plateau Fractures</li>
+                        <li>Osteoarthritis Support</li>
+                        <li>Post-Operative Rehabilitation</li>
+                    </ul>
+                    <a href="contact.html" class="btn-primary">Contact Us for Knee Braces</a>
+                </div>
+                <div>
+                    <img src="61H8mkt1bVL.jpg" alt="Knee Brace Details" class="detail-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="page-container">
+                <h2 class="testimonials-title">What Our Customers Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            All of the staff is extremely helpful. Quality of product and business practices make it
+                            easy to do business with them.
+                        </p>
+                        <p class="testimonial-author">— Robert D.</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            Great products for helping injured spinal patients through rehabilitation with chiropractic
+                            care. Highly recommended.
+                        </p>
+                        <p class="testimonial-author">— Office Caprow</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            Nova Nest helped me with my knee brace that could not be located anywhere else nearby. Kind
+                            people and very helpful.
+                        </p>
+                        <p class="testimonial-author">— Crystal H.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="page-container">
+                <h2 class="cta-title">Need Help Choosing the Right Product?</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 700px; margin: 0 auto 30px;">
+                    Our medical specialists can help you find the perfect brace for your condition and handle all
+                    insurance paperwork.
+                </p>
+                <div class="cta-buttons">
+                    <a href="tel:+14435297329" class="btn-primary">Call +1 (443) 529-7329</a>
+                    <a href="contact.html" class="btn-secondary">Contact Us Online</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="page-container">
+            <div class="footer-columns">
+                <div>
+                    <h3 class="footer-title">About Nova Nest</h3>
+                    <p>Trusted provider of Medicare-covered medical braces and supplies with reliable service and
+                        insurance support.</p>
+                </div>
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="prescription.html">Prescription Upload</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-title">Contact Information</h3>
+                    <p>
+                        849 Fairmount Ave, Suite 200 T16<br>
+                        Towson, MD 21286<br><br>
+                        <strong>Phone:</strong> <a href="tel:+14435297329"
+                            style="text-decoration: none; color: white;">+1 (443) 529-7329</a><br> <br>
+                        <strong>Email:</strong> <a href="mailto:support@novanestcare.com"
+                            style="text-decoration: none; color: white;">support@novanestcare.com</a><br>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 Nova Nest. All Rights Reserved. |
+                    <a href="privacy-policy.html" style="color:#bdc3c7;">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple WhatsApp float animation
+        window.addEventListener('load', function () {
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer) {
+                setTimeout(() => {
+                    whatsappContainer.style.opacity = '1';
+                }, 500);
+            }
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
